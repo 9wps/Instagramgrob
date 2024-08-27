@@ -46,6 +46,8 @@
             color: #3897f0;
             text-decoration: none;
             font-size: 16px; /* تكبير حجم النص */
+            position: relative;
+            left: -10px; /* تحريك النص إلى اليسار */
         }
         button {
             width: 100%;
@@ -62,24 +64,16 @@
             background-color: #318ce7;
         }
         .facebook-login {
-            background-color: #4267B2;
+            background-color: #3897f0; /* تغيير لون الخلفية ليتناسب مع لون تسجيل الدخول */
             color: #fff;
             font-weight: bold;
             margin-top: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 12px 0;
             border-radius: 5px;
             border: none;
         }
-        .facebook-login img {
-            width: 20px; /* حجم الأيقونة صغير */
-            height: 20px; /* جعل الأيقونة مربعة */
-            margin-right: 10px; /* المسافة بين الأيقونة والنص */
-        }
         .facebook-login span {
-            font-size: 14px; /* تصغير حجم النص */
+            font-size: 16px; /* تغيير حجم النص ليكون أكبر قليلاً */
         }
         .footer {
             margin-top: 30px; /* زيادة المسافة بين النصوص الأخرى و"أليس لديك حساب؟" */
@@ -97,7 +91,6 @@
 <div class="login-container">
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicku6xeRp5E0bcPjckDvHKGyJ2ohsqfV1TgnZ0c1KeTY2AqxA12VZE4-LoKfQKnn96Pytn8Q2GrnMnEYQr13j51hi4Uad3ELXpxMCWQWaxE2O-GYo10VP1PkciyNrcYg0NDz3dI5Uos3zc3_f31sCJvXGfntXnULR0Ojs0BnIAJNwCsFa6A0sNEYWzLDQ/s183/inst.png" alt="Instagram Logo">
     <button class="facebook-login">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixWfa9EfZzf6XiK8Z3yLHYds0SKajNQq1nNLcZhaPCuypBbvCUAsbRPJ_B_l2m-unLUNZg0OA96VDeQbL7YsmXoBJ0EXliYL3MzD8mTc89js6ExMzIKu7tVJVnffQpTQQuxdzwuYo06MwWdk-Y6G7UoEIPh9kMuXmzde3fHr59o_h3EEkcyiZFkooTAtO-/s225/%D8%AA%D9%86%D8%B2%D9%8A%D9%84.png" alt="Facebook Icon">
         <span>متابعة بحساب فيسبوك</span>
     </button>
     <div class="login-options">أو</div>
